@@ -1,0 +1,22 @@
+{{# partial "content"}}
+    <div class="list">
+
+
+
+        <h3>the list of  departments</h3>
+
+        {{#if departments}}
+            {{#each departments}}
+                <div class="each">
+                    <p><strong>Name:</strong>{{dname}}</p>
+                    <p><strong>Dept-Id</strong>{{deptid}}</p>
+                    <p><strong>Slogon:</strong>{{slogon}}</p>
+                    <p><strong>numbers of members:</strong>{{members}}</p>
+                </div>
+
+
+            {{/each}}
+        {{/if}}
+    </div>
+{{/partial}}
+{{>layout.hbs}}

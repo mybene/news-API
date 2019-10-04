@@ -115,12 +115,48 @@ public class App {
         //delete the news per id
         get("/news/:id/delete", (request, response) -> {
             Map<String, Object> article = new HashMap<>();
-            int idOfNewsToDelete = Integer.parseInt(request.params("title"));
+            int idOfNewsToDelete = Integer.parseInt(request.params("id"));
             News deleteNews= News.findById(idOfNewsToDelete); //change
             deleteNews.delete();
             response.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
+
+
+        get("/annoucement",((request, response) -> {
+            Map<String,Object> model=new HashMap<>();
+            return new ModelAndView(model, "deptNewsForm.hbs");
+        }), new HandlebarsTemplateEngine());
+
+//get the written articles
+        post("/annoucement/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String headline=request.queryParams("headline");
+            String develop=request.queryParams("develop");
+            DepartmentNews annoucement= new DepartmentNews(headline,develop);
+            annoucement.save();
+            model.put("headline",headline);
+            model.put("develop",develop);
+            return new ModelAndView(model, "NewsDept.hbs");
+        }, new HandlebarsTemplateEngine());
+// to see all saved article;
+        get("/annoucement/all",((request, response) -> {
+            Map<String,Object> model=new HashMap<>();
+            List<News> annoucement=News.all();
+            model.put("annoucement",annoucement);
+            return new ModelAndView(model, "annoucements.hbs");
+        }), new HandlebarsTemplateEngine());
+        //delete the news per id
+        get("/annoucement/:id/delete", (request, response) -> {
+            Map<String, Object> article = new HashMap<>();
+            int idOfNewsToDelete = Integer.parseInt(request.params("id"));
+            News deleteNews= News.findById(idOfNewsToDelete); //change
+            deleteNews.delete();
+            response.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
+
 
 
     }

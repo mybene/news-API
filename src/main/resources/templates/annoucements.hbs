@@ -1,0 +1,42 @@
+
+{{# partial "content"}}
+
+    <style>
+      .container{
+        background-color:aliceblue;
+        }
+
+        h4,h3{
+        color:blue;
+        }
+        .each{
+        border:1px solid back;
+        }
+
+
+    </style>
+    <body>
+    <div class="container">
+
+
+
+        <h3>The annoucement</h3>
+
+        {{#if annoucement}}
+            {{#each annoucement}}
+                <div class="each">
+                    <p><strong>Annoucement n.o:</strong>{{id}}</p>
+                    <h4><u>{{headline}}</u></h4>
+                    <p>{{develop}}</p>
+                    <a class="btn btn-danger" href="/news/:id/delete" >Delete</a>
+                </div>
+
+
+            {{/each}}
+        {{/if}}
+    </div>
+    </body>
+
+
+{{/partial}}
+{{>layout.hbs}}
