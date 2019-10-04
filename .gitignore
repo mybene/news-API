@@ -1,0 +1,10 @@
+.gradle
+/build/
+.classpath
+.project
+.settings/
+.vscode/
+.idea
+bin/
+
+!gradle-wrapper.jar
