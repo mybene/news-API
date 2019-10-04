@@ -5,7 +5,7 @@
 This App is made for company or instution to share information where the employees are listed with specified department and the badge number .and the general information are entered by every employees how has the key to enter in the sysytem and this person is able to dlete the information once wished.
 ## Getting Started
 
-* Git clone. //https://github.com/mybene/Organisational-News-Portal
+* Git clone.   https://news-paper-bene.herokuapp.com/
 * gradle build
 * create the postgres database
 
@@ -30,6 +30,7 @@ CREATE TABLE users(id erial PRIMARY KEY,name VARCHAR, position VARCHAR ,dept VAR
 
 ## References
 * java ,canvas Moringa school
+* //https://github.com/mybene/Organisational-News-Portal 
 
 
 ## License
