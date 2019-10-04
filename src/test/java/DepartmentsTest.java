@@ -13,7 +13,7 @@ public class DepartmentsTest {
     }
 
     @Test
-    public void Department_instatiatedCorrectly() {
+    public void Department_isStatiatedCorrectly() {
         assertEquals(true, departments instanceof Departments);
     }
 
@@ -22,9 +22,8 @@ public class DepartmentsTest {
         assertEquals("production", departments.getDname());
     }
 
-
     @Test
-    public void slogon_isStatedCorrectly_string() {
+    public void slogon_areStatedCorrectly_string() {
         assertEquals("time delivery", departments.getSlogon());
     }
     @Test
